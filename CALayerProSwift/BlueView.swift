@@ -9,7 +9,8 @@
 import UIKit
 
 
-@IBDesignable class BlueView: UIView {
+@IBDesignable
+class BlueView: UIView {
     
     let gradientLayer = CAGradientLayer()
     
@@ -41,10 +42,12 @@ import UIKit
     //let midColor = UIColor.grayColor()
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         setup()
     }
     
     override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
         setup()
     }
     
@@ -56,20 +59,17 @@ import UIKit
     }
     
     private func gradientSetup () {
+        
         gradientLayer.colors = [startColor.CGColor, midColor.CGColor, endColor.CGColor]
         gradientLayer.startPoint = CGPointMake(0.5, 0.2)
         gradientLayer.endPoint = CGPointMake(0.5, 0.8)
-/*
-        gradientLayer.startPoint = CGPointMake(0.2, 0.8)
-        gradientLayer.endPoint = CGPointMake(0.8, 0.2)
-  */
+
+        //gradientLayer.locations = [0, 0.75, 1]
         
-        gradientLayer.locations = [0, 0.75, 1]
     }
     
     override func layoutSubviews() {
         gradientLayer.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))
-        
     }
     
     

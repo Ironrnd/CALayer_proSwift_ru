@@ -35,7 +35,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func orangeButtonTapped(sender: UIButton) {
-        
         if shadowSwitch {
             orangeButton.layer.shadowOffset = CGSize(width: 4.0, height: 4.0)
         } else {
